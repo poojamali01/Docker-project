@@ -1,88 +1,71 @@
-# 🧶 Crochet Corner
+# 🧶 Crochet Corner – Dockerized 3-Tier Application
 
-A 3-tier web application built using Docker Compose.
+A **Docker-focused 3-tier web application** built to gain hands-on experience with containerization, Docker Compose, Docker Hub, networking, health checks, and persistent storage.
 
-## Architecture
+The application consists of:
 
-Frontend:
-- HTML
-- CSS
-- JavaScript
-- Vite
-- Nginx
+- **Frontend** – Vite + JavaScript
+- **Backend** – Node.js + Express
+- **Database** – MongoDB
 
-Backend:
-- Node.js
-- Express
+> 🐳 **Primary Focus: Docker & Containerization**
 
-Database:
-- MongoDB
+---
 
-Containerization:
-- Docker
-- Docker Compose
-- Docker Hub
+## 🐳 Docker Implementation
 
-## Architecture Flow
+This project focuses on implementing Docker concepts in a real multi-container application.
 
-Browser
-↓
-Frontend
-↓
-Backend API
-↓
-MongoDB
+### Docker concepts demonstrated
 
-## Project Structure
-
-crochet-corner/
-├── frontend/
-├── backend/
-├── database/
-├── docker-compose.yml
-├── .env
-└── README.md
-
-## Docker Hub Images
-
-Frontend:
-YOUR_DOCKER_HUB_FRONTEND_LINK
-
-Backend:
-YOUR_DOCKER_HUB_BACKEND_LINK
-
-## How to Run
-
-Clone the repository.
-
-Create the .env file.
-
-Run:
-
-docker compose pull
-
-docker compose up
-
-Open:
-
-http://localhost:3000
-
-## Services
-
-Frontend: 3000
-
-Backend: 5000
-
-MongoDB: 27017
-
-## Features
-
-- View crochet products
-- Add products
-- MongoDB persistence
-- REST API
+- Multi-stage Docker builds
+- Dockerfiles for frontend and backend
+- Docker image creation and tagging
 - Docker containers
 - Docker Compose
-- Health checks
-- Named volume
-- Docker Hub images
+- Docker Hub
+- Docker networks
+- Container-to-container communication
+- Docker named volumes
+- Database persistence
+- Container health checks
+- Service dependencies
+- Port mapping
+- Environment variables using `.env`
+- Container restart policies
+- Pulling images from Docker Hub
+- Container troubleshooting and log monitoring
+
+---
+
+## 🏗️ Application Architecture
+
+```text
+                    User
+                     |
+                     | Port 3000
+                     ↓
+             ┌─────────────────┐
+             │    Frontend     │
+             │  Nginx + Vite   │
+             │    Container    │
+             └────────┬────────┘
+                      |
+                      | API
+                      ↓
+             ┌─────────────────┐
+             │     Backend     │
+             │ Node.js Express │
+             │    Container    │
+             └────────┬────────┘
+                      |
+                      | MongoDB
+                      ↓
+             ┌─────────────────┐
+             │    MongoDB      │
+             │    Container    │
+             └────────┬────────┘
+                      |
+                      ↓
+                Docker Volume
+                  mongo-data
