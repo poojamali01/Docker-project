@@ -1,0 +1,96 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #fff8f5;
+  color: #333;
+}
+
+header {
+  text-align: center;
+  padding: 40px 20px;
+  background: #f8dfe8;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 40px;
+}
+
+header p {
+  font-size: 18px;
+}
+
+main {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+main > h2 {
+  text-align: center;
+}
+
+.products {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 30px 0;
+}
+
+.product {
+  background: white;
+  width: 280px;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.product h3 {
+  margin-top: 0;
+}
+
+.product strong {
+  display: block;
+  font-size: 22px;
+  margin-top: 15px;
+}
+
+.add-product {
+  background: white;
+  padding: 30px;
+  margin-top: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.add-product h2 {
+  text-align: center;
+}
+
+input {
+  display: block;
+  width: 100%;
+  max-width: 500px;
+  padding: 12px;
+  margin: 12px auto;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+
+button {
+  display: block;
+  margin: 15px auto;
+  border: none;
+  padding: 12px 22px;
+  border-radius: 6px;
+  cursor: pointer;
+  background: #c76b8a;
+  color: white;
+  font-size: 16px;
+}
